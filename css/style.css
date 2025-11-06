@@ -1,0 +1,26 @@
+:root{
+    --background-body: hsl(217,54%,11%);
+    --background-card: hsl(216,50%,16%);
+    --background-overlay: hsla(178,100%,50%,0.5);
+
+    --color-title: hsl(0,0%,100%);
+    --color-title-hover: hsl(178,100%,50%);
+    --color-paragraph: hsl(215,51%,70%);
+    --color-line: hsl(215,32%,27%);
+
+    --font-title: 600;
+    --font-paragraph: 300;
+    --font-ntf: 400;
+
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: var(--background-body);
+    color: var(--color-paragraph);
+}
+
