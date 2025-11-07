@@ -12,6 +12,7 @@
     --font-paragraph: 300;
     --font-ntf: 400;
 
+    --radius-card: .5em;
 }
 
 html {
@@ -24,3 +25,103 @@ body {
     color: var(--color-paragraph);
 }
 
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.card {
+    max-width: 375px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-card);
+    padding: 1.5em;
+    border-radius:  var(--radius-card);
+}
+
+.card__media {
+    position: relative;
+    overflow: hidden;
+}
+
+.card__media img{
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    border-radius: var(--radius-card);
+}
+
+.card-link {
+    color: var(--color-title);
+    text-decoration: none;
+}
+
+.card__content p {
+    width: 80%;
+    line-height: 1.5;
+}
+
+.card__details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom:  1px solid var(--color-line);
+    padding-bottom: 1em;
+}
+
+.card__price, .card__time {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: .5em;
+}
+
+.card__price img, .card__time img {
+    height: 1.2em;
+    align-self: center;
+}
+
+.card__price {
+    color: var(--color-title-hover);
+    font-weight: var(--font-ntf);
+}  
+
+.card__author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .7em;
+    padding-top: 1em;
+}
+
+.card__author img {
+    height: 2em;
+    border: 1px solid var(--color-title);
+    border-radius: 50%;
+}
+
+@media(min-width: 900px) {
+    .card-link:hover {
+        color: var(--color-title-hover);
+        cursor: pointer;
+    }
+    
+    .card__media:hover::before {
+        cursor: pointer;
+        content: "";
+        inset: 0;
+        background-image: url(../images/icon-view.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        background-color: var(--background-overlay);
+        border-radius: var(--radius-card);
+        object-fit: cover;
+    }
+    
+   
+}
